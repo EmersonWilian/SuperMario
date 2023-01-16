@@ -1,0 +1,87 @@
+*{  /*Reset*/
+    margin: o;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 20px solid green;
+    margin: 0 auto; /*Centralidando a div*/
+    position: relative; /*serve pare respeitar a delimitação do quadro*/
+    overflow: hidden; /*tudo que sair da delimitação não aparecerá mais*/
+    background: linear-gradient(#87ceeb, #E0f6FF);
+}
+.pipe{ /*Editando o tubo no css*/
+
+    position: absolute;
+    bottom: 0;
+    width: 80px; /*diminuindo o tamanho*/
+    
+    /*Usando a animação declarada em baixo */
+    animation: pipe-animation 3s infinite linear; /*Infinite - para nunca parar / Linear - para movimento ser linear */
+}
+.clouds{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 10s infinite linear;
+
+
+}
+
+
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.jump{ /*Fica aqui a animação para quando apertar*/
+    animation: jump 500ms ease-out; /* ease-out - cai mais suavemente */
+}
+
+@keyframes pipe-animation{ /*criando a animação*/
+    from{ /*De onde começa */
+        right: -80px;
+    }
+
+    to{ /*Até onde termina */
+        right: 100%;
+    }
+
+}
+
+@keyframes jump{
+
+    0%{ /*Começo */
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{ /*Meio */
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{ /*Fim */
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -550px;
+    }
+    to{
+        right: 100%;
+    }
+}
